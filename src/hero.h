@@ -11,6 +11,8 @@
 #define HERO_X 0
 #define HERO_Y 99
 
+#define HERO_SPEED 2.0f
+
 typedef struct {
     Texture2D *texture;
     Rectangle clip;
