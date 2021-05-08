@@ -5,6 +5,8 @@
 #ifndef FLIGHTERS_ECS_HERO_H
 #define FLIGHTERS_ECS_HERO_H
 
+#include "raylib.h"
+
 #define HERO_WIDTH 102
 #define HERO_HEIGHT 126
 
@@ -21,6 +23,8 @@ typedef struct {
 } Hero;
 
 Hero *create_hero(const int screen_width, const int screen_height, Texture2D *texture);
+
+void update_by_keypressed(const int screen_width, Hero *hero);
 
 void draw_hero(Hero *);
 

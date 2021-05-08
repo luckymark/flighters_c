@@ -25,8 +25,7 @@ int main() {
 
         UpdateMusicStream(music);
 
-        if (IsKeyDown(KEY_RIGHT)) hero->position.x += HERO_SPEED;
-        if (IsKeyDown(KEY_LEFT)) hero->position.x -= HERO_SPEED;
+        update_by_keypressed(screen_width, hero);
 
         draw_sky(&sky);
         draw_hero(hero);
