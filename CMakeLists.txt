@@ -8,8 +8,9 @@ set(CMAKE_C_STANDARD 99)
 set(source "${CMAKE_SOURCE_DIR}/resources")
 set(destination "${CMAKE_CURRENT_BINARY_DIR}/resources")
 
+file(GLOB_RECURSE SOURCE_FILES "src/*.c")
 
-add_executable(flighters_c src/main.c src/hero.c)
+add_executable(flighters_c ${SOURCE_FILES})
 
 add_custom_command(
         TARGET ${PROJECT_NAME} POST_BUILD
