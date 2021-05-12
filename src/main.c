@@ -14,12 +14,19 @@
 int main(void) {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "flighters");
 
+    InitAudioDevice();
+
+    Music music = LoadMusicStream("resources/sound/game_music.ogg");
+    PlayMusicStream(music);
+
     Texture2D texture = LoadTexture("resources/image/shoot.png");
     float hero_x = (SCREEN_WIDTH - HERO_WIDTH) / 2;
     float hero_y = SCREEN_HEIGHT - HERO_HEIGHT;
 
     while (!WindowShouldClose()) {
         BeginDrawing();
+
+        UpdateMusicStream(music);
 
         if (IsKeyDown(KEY_RIGHT)) hero_x += HERO_SPEED;
         if (IsKeyDown(KEY_LEFT)) hero_x -= HERO_SPEED;
