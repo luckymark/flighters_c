@@ -7,7 +7,7 @@
 - [x] 显示一架静止的飞机于屏幕底部
 - [ ] 显示天空背景
 - [ ] 背景音乐
-- [ ] 左右键，控制移动飞机
+- [x] 左右键，控制移动飞机
 - [ ] 限制Hero移动的左右边界
 - [ ] 空格键开炮，显示运动的炮弹
 - [ ] 炮弹飞出边界处理
@@ -27,3 +27,4 @@
 
 DrawTexture(texture, x, y, WHITE); //按指定位置(x,y)显示texture DrawTextureRec(texture, clip, position, WHITE);按矩形clip截取部分图形显示
 
+IsKeyDown(KEY_RIGHT)  

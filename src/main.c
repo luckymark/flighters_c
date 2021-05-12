@@ -9,18 +9,26 @@
 #define HERO_WIDTH 102
 #define HERO_HEIGHT 126
 
+#define HERO_SPEED 0.5f
+
 int main(void) {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "flighters");
 
     Texture2D texture = LoadTexture("resources/image/shoot.png");
+    float hero_x = (SCREEN_WIDTH - HERO_WIDTH) / 2;
+    float hero_y = SCREEN_HEIGHT - HERO_HEIGHT;
 
     while (!WindowShouldClose()) {
         BeginDrawing();
 
+        if (IsKeyDown(KEY_RIGHT)) hero_x += HERO_SPEED;
+        if (IsKeyDown(KEY_LEFT)) hero_x -= HERO_SPEED;
+
         ClearBackground(RAYWHITE);
 
         Rectangle clip = {HERO_X, HERO_y, HERO_WIDTH, HERO_HEIGHT};
-        Vector2 position = {(SCREEN_WIDTH - HERO_WIDTH) / 2, SCREEN_HEIGHT - HERO_HEIGHT};
+
+        Vector2 position = {hero_x, hero_y};
         DrawTextureRec(texture, clip, position, WHITE);
 
         EndDrawing();
