@@ -1,9 +1,12 @@
 cmake_minimum_required(VERSION 3.17)
 project(flighters_c C)
 
+set(CMAKE_C_FLAGS "-framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo")
 find_package(raylib 2.5.0 REQUIRED) # Requires at least version 2.5.0
 
+
 set(CMAKE_C_STANDARD 99)
+
 
 set(source "${CMAKE_SOURCE_DIR}/resources")
 set(destination "${CMAKE_CURRENT_BINARY_DIR}/resources")
